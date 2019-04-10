@@ -1,0 +1,94 @@
+{% extends 'Stocks/base.html' %}
+{% load staticfiles %}
+
+{% block document_body %}
+<h1>Hey, {{user.username}} welcome :)</h1></br>
+
+<!-- <div class="content-section"> -->
+    
+    <h4>You can choose from a list of Nasdaq 100 Stocks, or maybe see whats trending?</h4></br>
+   
+    <!-- <img src="/Users/Swapnil/Desktop/ProjectStock/Stocks/static/company_logos/AAL.png" alt="Smiley face" height="42" width="42"> -->
+    <img src="{{ tsla_logo.company_logo.url }}">
+
+    <div class="panel-group" id="myaccordian">
+            <div class="panel panel-primary">
+                <div class="panel-heading btn btn-info btn-lg btn-block" >
+                    <h3 class="panel-title" data-target="#panel-3" data-toggle="collapse" style="color:whitesmoke">Your Favourite Stocks</h3>
+                </div>
+                <div class="panel-collapse collapse" id="panel-3">
+                    <div class="panel-body">
+                        <div class="row">   
+                                {% for fav in favourite_stocks %} 
+                                <div class="col-4">
+                                    <a href="{% url 'Stocks:results' fav.id %}">
+                                    <div class="btn btn-light" >         
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ fav }}</h5><img class="rounded-circle" src="{{ fav.company_logo.url }}"height="60" width="100" align="left">
+                                            </div>
+                                    </div>
+                                    </a>
+                                </div>
+                                {% empty %}
+                                <div class="col-12">
+                                    <h5>You have not selected any favourite stocks. You can make stocks your favourite on the results page.</h5>
+                                </div>
+                                    
+                                {% endfor %}         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </br>
+    <div class="panel-group" id="myaccordian">
+        <div class="panel panel-primary">
+            <div class="panel-heading btn btn-info btn-lg btn-block" >
+                <h3 class="panel-title" data-target="#panel-1" data-toggle="collapse" style="color:whitesmoke">Top 5 Trending Stock Responses</h3>
+            </div>
+            <div class="panel-collapse collapse" id="panel-1">
+                <div class="panel-body">
+                            <ol>
+                        {% for response in top_responses %}
+                            <li>
+                                <a href="{% url 'Stocks:stocks' response.id %}">
+                                    <div class="btn btn-light" >         
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{ response }} - {{response.num_response}} Response(s)</h5><img class="rounded-circle" src="{{ response.company_logo.url }}" height="60" width="100" align="left">
+                                            </div>
+                                    </div>
+                                 </a>
+                                            
+                            </li>     
+                        {% endfor %}
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+    </br>
+        <div class="panel panel-primary">
+                <div class="panel-heading btn btn-info btn-lg btn-block">
+                    <h3 class="panel-title" data-target="#panel-2" data-toggle="collapse" style="color:whitesmoke">Select a stock - (List of Nasdaq 100 Stocks)</h3>
+                </div>
+                <div class="panel-collapse collapse" id="panel-2">
+                    <div class="panel-body">
+                            <div class="row">   
+                                    {% for stock2 in stock_list %} 
+                                    <div class="col-4">
+                                     <a href="{% url 'Stocks:stocks' stock2.id %}">
+                                        <div class="btn btn-light" >         
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{ stock2 }} ({{stock2.stock_symbol}})</h5><img class="rounded-circle" src="{{ stock2.company_logo.url }}"height="60" width="100" align="left">
+                                                </div>
+                                        </div>
+                                     </a>
+                                    </div>
+                                    {% endfor %}         
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+{% endblock document_body %}

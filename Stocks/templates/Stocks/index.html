@@ -1,0 +1,15 @@
+{% extends 'Stocks/base.html' %}
+
+{% block document_body %}
+
+<h1>Homepage</h1>
+
+<p>
+    Application allows you to select a stock, answer two questions and then will show statistical charts</br>
+    Click the button below to begin, where you will be asked to login.
+</p>
+<a class="btn btn-outline-info" href="{% url 'Stocks:SelectStock' %}">Choose Stocks</a>
+
+<!-- <button class="" type="submit">Choose Stock</button>  -->
+
+{% endblock document_body %}

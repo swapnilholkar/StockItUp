@@ -1,0 +1,72 @@
+{% extends 'Stocks/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block document_body %}
+
+<h1>{{ stock.company_name }} ({{stock.stock_symbol}})  <img class="rounded-circle" src="{{ stock.company_logo.url }}" height="60" width="100"></h1>
+
+<div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Answer the following questions: (Recommended)</legend>
+                {{ StockQuestionForm|crispy }} 
+            </fieldset>
+            <div class="form-group">
+                <a class="btn btn-outline-info mr-3" href="{% url 'Stocks:SelectStock' %}">Back</a>
+                <button class="btn btn-outline-success" type="submit">Submit</button>
+                <a class="btn btn-outline-info mr-3" href="{% url 'Stocks:results' stock.id%}" style="float: right">Go To Results</a>
+            </div> 
+        </form>
+    </div>
+
+
+<div class="content-section">
+    <h2>Historical Price Chart</h2>
+    <div class="col-md-12">{{historical_chart_div|safe}}</div>
+</div>
+
+
+{% endblock document_body %}
+
+
+
+
+<!-- {% if question_list %} -->
+<!-- <div class="content-section"> -->
+     <!-- <fieldset class="form-group"> -->
+            <!-- <form id="stockQuestionForm" name="questionForm">  -->
+                <!-- {% csrf_token %}  -->
+                <!-- {% for question in question_list %} -->
+
+                    <!-- <label for="question{{ forloop.counter }}" name="{{ question.id }}">{{ question }} :</label></br> -->
+                    <!-- {% if question.id == 5 %} -->
+                     <!-- <input id="{{question.id}}" type="select" value="Bullish" name="response" /><br /> -->
+
+                        <!-- <select id="{{question.id}}" class="form-control"> -->
+                            <!-- <option value="Bullish">Bullish</option> -->
+                            <!-- <option value="Bearish">Bearish</option> -->
+                        <!-- </select> -->
+                    <!-- </br> -->
+                        
+                    <!-- {% else %} -->
+                        <!-- this will always be 5 -->
+                        <!-- <input id="5" type="select" value="Bullish" name="response" /><br /> -->
+                        <!-- <input id="{{question.id}}" class="form-control" type="text"  name="q2Response" placeholder="$"/><br /> -->
+                        <!-- <p id="alertMessage"> </p> -->
+                    <!-- {% endif %} -->
+                <!-- {% endfor %}    -->
+                <!-- <div class="form-group">
+                <a class="btn btn-outline-info mr-3" href="{% url 'Stocks:SelectStock' %}">Back</a>
+                <input class="btn btn-outline-success" type="submit" value="Submit" onclick="submitStocksForm('{{ stock.id }}')">
+                </div>
+            </form>
+    </fieldset> -->
+<!-- 
+{% else %}
+<p>No Stocks are available.</p>
+
+{% endif %}
+</div>
+
+<p id="alertMessage"> </p> -->

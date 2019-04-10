@@ -1,0 +1,25 @@
+{% extends "Stocks/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block document_body %}
+    <div class="content-section">
+        <h1>Profile Details:</h1>
+        <div class="media-body" >
+            <h3>Username:</h3><h4 class="text-secondary">{{ user.username }}</h4></br>
+            <h3>Email:</h3><h4 class="text-secondary">{{ user.email }}</h4>
+        </div>
+
+    </br>
+    <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Update Your Profile</legend>
+                {{ user_update_form|crispy }} 
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button> 
+            </div>
+        </form>
+    </div>
+{% endblock document_body %}  
+

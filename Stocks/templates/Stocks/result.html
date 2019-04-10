@@ -1,0 +1,87 @@
+{% extends 'Stocks/base.html' %}
+
+{% block document_body %}
+
+<div class="container">
+    
+        <div class="row">
+               
+          <div class="col-7" >
+                <h1 align="left">Results for {{ stockname.company_name}}  <img class="rounded-circle" src="{{ stockname.company_logo.url }}" height="60" width="100" ></h1>
+                <h2>Below are all the results entered</h2>
+          </div>
+          <div class="col-sm">
+                <div id='favourite' align="right">
+                        {% if is_fav %}
+                        <a href="{% url 'Stocks:makeFavourite' stockname.id %}">
+                            <h5>Delete from favourites</h5><i class="fas fa-star fa-lg"></i>    
+                        </a>
+                        {% else %}
+                        <a href="{% url 'Stocks:makeFavourite' stockname.id %}">
+                                <h5>Add to favourites</h5><i class="far fa-star fa-lg"></i>    
+                        </a>
+                        {% endif %}
+                    </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+<div class="row">  
+
+</div>
+
+
+<!-- making the stock favourite -->
+
+
+
+
+<div class="content-section">
+
+    <h2>Bullish/Bearish</h2>
+    <h4>Total of {{stockq1Response}} Responses</h4>
+    <div class="col-md-12">{{bull_bear_pie_chart_div|safe}}</div>
+    <!-- {% for q1answer in stockq1 %}
+        {{ q1answer.response_text }}<br/>
+    {% endfor %} -->
+   
+</div>
+
+<div class="content-section">
+
+    <h2>Target Price</h2>
+    <h4>Total of {{stockq2Response}} Responses</h4>
+    <div class="col-md-12">{{target_price_bar_div|safe}}</div>
+    <!-- {% for q2answer in stockq2 %}
+        {{ q2answer.response_text }}<br/>
+    {% endfor %} -->
+
+</div>
+
+<div class="content-section">
+    <h2>Historical Price Chart</h2>
+    <div class="col-md-12">{{plot|safe}}</div>
+</div>
+
+
+<div class="content-section">
+    <h2>Twitter Sentiment Analysis </h2>
+    <div class="col-md-12">{{twitter_pie_chart_div|safe}}</div>
+</div>
+
+
+   
+{% endblock document_body %}
+
+
+
+
+
+
+
+

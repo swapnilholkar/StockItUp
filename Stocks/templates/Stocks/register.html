@@ -1,0 +1,31 @@
+{% extends "Stocks/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block document_body %}
+     <!-- the form         -->
+
+     <legend style="color: red" class="border-bottom mb-4">When registering please do the following:</legend>
+     <p>Since this is for testing purposes, please read the below instructions:</p>
+     <p>1)Please <b>do not use your own password</b> instead use the following password: <b>TestPassword123</b></p>
+     <p>2)Username can be whatever you wish.</p>
+     <p>3)Email choice is totally up to you.</p>
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today For Stock Trends!</legend>
+                {{ form|crispy }} 
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Sign up</button> 
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">  
+                Already have an account? <a class= "ml-2" href="{% url 'Stocks:login' %}">Sign In</a>
+            </small>
+        </div>
+
+
+    </div>
+{% endblock document_body %}  

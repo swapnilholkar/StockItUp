@@ -1,0 +1,14 @@
+{% extends "Stocks/base.html" %}
+
+
+{% block document_body %}
+     <!-- the form         -->  
+     <h2> Successfully logged out </h2>
+        
+        <div class="border-top pt-3">
+            <small class="text-muted">  
+                <a href="{% url 'Stocks:login' %}">Sign in</a>
+            </small>
+        </div>
+
+{% endblock document_body %}   
