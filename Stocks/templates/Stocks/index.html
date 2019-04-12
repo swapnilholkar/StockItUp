@@ -2,11 +2,15 @@
 
 {% block document_body %}
 
-<h1>Homepage</h1>
+<h1>Welcome</h1>
 
 <p>
-    Application allows you to select a stock, answer two questions and then will show statistical charts</br>
-    Click the button below to begin, where you will be asked to login.
+    The aim of this web application is to help you compare your stock predictions with other users.</br></br>
+    There are 3 easy steps:</br>
+    1) Select a stock form the list</br>
+    2) Answer two questions</br>
+    3) View results</br></br>
+    Click the button below to begin, where you will be asked to login. If you have not got a account, then please register.
 </p>
 <a class="btn btn-outline-info" href="{% url 'Stocks:SelectStock' %}">Choose Stocks</a>
 
