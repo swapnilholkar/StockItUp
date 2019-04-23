@@ -2,33 +2,33 @@
 
 ## Getting Started
 
-The application can be accessed through the following URL : http://35.177.125.254:8000/. This is the live version of the application. In order to use the application you need to have an account. 
+The application can be accessed through the following URL : http://35.177.125.254:8000/. This is the live version of the application. In order to use the application, you need to have an account. 
 
-### Use an exisitng account
+### Use an existing account
 
-To login in immediately, you can use the follwoing username and password:
+To login in immediately, you can use the following  username and password:
 
 * Username : test
 * Password : Password123. 
 
 ### Create an account
 
-If you wish to create a new account then please follow these instructions:
+If you wish to create a new account, then please follow these instructions:
 * Username can be anything you wish
 * Use the following password : TestPassword123
 * Email entered is up to you
 
-### Run the application on your local machine:
+### Run the application on your local computer:
 
 #### Prerequisites
 
-1) Make sure you have a local enviroment set up
+1) Make sure you have a local environment set up
 2) Python installed 
 3) Django installed
 
 #### Installing
 
-Once the local enviroment is set up
+Once the local environment  is set up
 
 ```
 1) go to the location of the manage.py file within the directory.
