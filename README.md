@@ -1,12 +1,10 @@
 # A Web Application for Gathering Expert Opinion and Providing Plausible Stock Trend Information
 
-The applcaiton can be accessed through the following URL : http://35.177.125.254:8000/. This is the most up to date version of the application.
-
 ## Getting Started
 
-In order to use the application you need to have an account
+In order to use the application you need to have an account. The applicaiton can be accessed through the following URL : http://35.177.125.254:8000/. This is the most up to date version of the application.
 
-### use an exisitng account
+### Use an exisitng account
 
 To login in immediately, you can use the follwoing username and password:
 
@@ -26,6 +24,7 @@ If you wish to run the application on your local machine you can do the followin
 
 1) Make sure you have a local enviroment set up
 2) Python installed 
+3) Django installed
 
 ### Installing
 
@@ -34,8 +33,10 @@ Once the local enviroment is set up
 ```
 1) Go to the location of the manage.py file within the directory
 2) Activate the local environment
-3) run the requirements.txt file
-4) Run python manage.py runserver
+3) run pip install -r requirements.txt
+4) Some packages will need to be installed manaually, install these using pip install
+5) Run python manage.py runserver
+6) Enter the URL in your browser
 
 ```
 
