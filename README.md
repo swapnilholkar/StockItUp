@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-In order to use the application you need to have an account. The applicaiton can be accessed through the following URL : http://35.177.125.254:8000/. This is the most up to date version of the application.
+The applicaiton can be accessed through the following URL : http://35.177.125.254:8000/. This is the most up to date version of the application. In order to use the application you need to have an account. 
 
 ### Use an exisitng account
 
