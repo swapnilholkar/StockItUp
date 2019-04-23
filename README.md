@@ -34,7 +34,7 @@ Once the local enviroment is set up
 1) go to the location of the manage.py file within the directory.
 2) activate the local environment.
 3) run pip install --upgrade -r requirements.txt
-4) if  in the event the above like of code does not install all the packages, then please install the necessary packages  manaually.
+4) install any packages that were not installed properly from the requirements.txt (if any)
 5) run python manage.py runserver
 6) enter the URL in your browser.
 
