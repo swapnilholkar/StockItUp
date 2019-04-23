@@ -20,13 +20,13 @@ If you wish to create a new account then please follow these instructions:
 
 ### Run the application on your local machine:
 
-## Prerequisites
+#### Prerequisites
 
 1) Make sure you have a local enviroment set up
 2) Python installed 
 3) Django installed
 
-## Installing
+#### Installing
 
 Once the local enviroment is set up
 
