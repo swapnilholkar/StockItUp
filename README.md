@@ -31,12 +31,12 @@ If you wish to run the application on your local machine you can do the followin
 Once the local enviroment is set up
 
 ```
-1) Go to the location of the manage.py file within the directory
-2) Activate the local environment
+1) go to the location of the manage.py file within the directory
+2) activate the local environment
 3) run pip install -r requirements.txt
-4) Some packages will need to be installed manaually, install these using pip install
-5) Run python manage.py runserver
-6) Enter the URL in your browser
+4) some packages will need to be installed manaually, install these using pip install
+5) run python manage.py runserver
+6) enter the URL in your browser
 
 ```
 
