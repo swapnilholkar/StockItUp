@@ -1,3 +1,5 @@
+# Libray used iexfinance 0.4.0, Author: Addison Lynch, Last modified 21 Feb 2019, Avaialbility: https://github.com/addisonlynch/iexfinance
+
 import os
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'ProjectStock.settings'

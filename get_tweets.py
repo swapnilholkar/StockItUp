@@ -1,3 +1,4 @@
+# Code adapted from Author: Ahmet Taspinar, data: 2018, Availability: https://github.com/taspinar/twitterscraper 
 import os
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'ProjectStock.settings'
@@ -13,7 +14,7 @@ from datetime import datetime,date,time,timedelta
 from twitterscraper import query_tweets
 
 
-# this will query tweets from yesterday to today's date
+# this will query tweets from yesterday to today's date and save them into the repective CSV file
 count=0
 stockTicker = StockDetail.objects.all()
 Previous_Date = date.today() - timedelta(days=1)

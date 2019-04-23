@@ -1,9 +1,7 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <title>Stocks app</title>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -63,53 +61,27 @@
 
         <div class='container' >
                 <div class="row">
-                    <!-- <div class="col-4">                 
-                        <h1>navbar</h1>
-                    </div>
-                    <div class="col-4">                 
-                        <h1>navbar</h1>
-                    </div>
-                    <div class="col-4">                 
-                        <h1>navbar</h1> -->
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-2">
-        
-                           
+                    <div class="col-2">      
                     </div>
                     <div class="col-8">
                             {% if messages %}
                                 {% for message in messages %}
                                     <div class="alert alert-{{ message.tags }}">
                                         {{ message }}
-                                    </div>
-                                    
-                                    
+                                    </div>   
                                 {% endfor %}
                             {% endif %}
                             {% block document_body %}
         
                             {% endblock document_body %}    
                     </div>
-                    <div class="col-2">
-                            
+                    <div class="col-2">    
                     </div>
-                </div>
-                
+                </div>     
         </div>
-
-        
-            
-<!-- js for input and saving data -->
 <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
-<!-- <footer class="page-footer font-small ">
-
-        <div class="footer-copyright text-center py-3">© 2019 Copyright: StockItUp
-        </div>
-        
-      
-</footer> -->
-
 </html>

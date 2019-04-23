@@ -4,7 +4,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-
+# stores basic stock data
 class StockDetail(models.Model):
     
     stock_symbol = models.CharField(max_length=200)
@@ -16,6 +16,7 @@ class StockDetail(models.Model):
     def __str__(self):
         return self.company_name
     
+# stores questions
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     
@@ -25,7 +26,7 @@ class Question(models.Model):
     def was_published_recently(self):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-    
+#    stores the responses 
 class Response(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
@@ -36,7 +37,7 @@ class Response(models.Model):
     def __str__(self):
         return self.response_text 
         
-
+# stores the feedback
 class Feedback(models.Model):
     rate_function = models.CharField(max_length=201)
     most_function = models.CharField(max_length=201)
@@ -48,22 +49,6 @@ class Feedback(models.Model):
 
     def __str__(self):
         return self.rate_design 
+  
 
-
-        
-# #  for profile
-# class Profile(models.Model):
-#     user=models.OneToOneField(User, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return f'{self.user.username} Profile'       
-        
-        
-
-#for later stage
-class ExStockInfo(models.Model):
-        stock_company = models.ForeignKey(StockDetail, on_delete=models.CASCADE)
-        source_name = models.CharField(max_length=200)
-        ex_target_price = models.FloatField(max_length=200)
-        
         
