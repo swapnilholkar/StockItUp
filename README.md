@@ -18,7 +18,7 @@ If you wish to create a new account then please follow these instructions:
 * Use the following password : TestPassword123
 * Email entered is up to you
 
-If you wish to run the application on your local machine you can do the following:
+### Run the application on your local machine:
 
 ### Prerequisites
 
