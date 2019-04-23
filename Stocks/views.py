@@ -317,12 +317,12 @@ def results(request,stock_id):
     fig = go.Figure(data=data, layout=layout)
     historical_chart_div = plot(fig, output_type='div', include_plotlyjs=False,config=config)
     
-    # twitter sentiment analsyis + graph 
+    # twitter sentiment analysis + graph 
     pos_sentence_count=0
     neg_sentence_count=0
     nuet_sentence_count=0
     count_of_tweets=0
-    # santise the tweet before passing it to the analsyis
+    # santise the tweet before passing it to the analysis
 
     analyzer = SentimentIntensityAnalyzer()
     for sentence in tdf['Tweet']:
